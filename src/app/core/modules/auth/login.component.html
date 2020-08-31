@@ -1,0 +1,56 @@
+<div class="wrapper-page">
+
+  <div class="text-center">
+    <a routerLink="/" class="logo-lg">
+      <h3 class="font-weight-bold">Health Metrics Inc.</h3>
+    </a>
+  </div>
+
+  <form class="form-horizontal m-t-20" [formGroup]="loginForm" (submit)="login()" autocomplete="off">
+
+    <div class="alert alert-danger my-3 font-14" *ngIf="error">
+      {{ errorMsg }}
+    </div>
+
+    <div class="form-group row">
+      <div class="col-12">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="mdi mdi-account"></i></span>
+          </div>
+          <input class="form-control" type="text" placeholder="Username" formControlName="username">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-12">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="mdi mdi-key"></i></span>
+          </div>
+          <input class="form-control" type="password" placeholder="Password" formControlName="password">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group text-left row mb-0">
+      <div class="col-12">
+        <button type="button" class="btn btn-link waves-effect waves-light mb-2 px-0" routerLink="../forgotPassword">
+          Forgot Password?
+        </button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="text-right">
+        <button class="btn btn-primary btn-custom w-md waves-effect waves-light" type="submit">
+          Log In
+        </button>
+      </div>
+    </div>
+
+
+
+  </form>
+</div>

@@ -42,7 +42,7 @@ export class AuthService {
     return JSON.parse(localStorage.getItem('credentials'));
   }
 
-  public setCredentials(credentials?: Credentials) {
+  public setCredentials(credentials?: Credentials): void {
     localStorage.setItem('credentials', JSON.stringify(credentials));
   }
 

@@ -23,6 +23,8 @@ export class AuthorizedGuard implements CanActivate, CanActivateChild {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    console.log('trigger auth gaurd');
+    console.log(JSON.parse(localStorage.getItem('credentials')));
     if (this.as.isAuthenticated()) {
 
       const userRole = Object.keys(this.ps.getPermissions());
@@ -36,6 +38,9 @@ export class AuthorizedGuard implements CanActivate, CanActivateChild {
               username: user.principal.username,
               role
             });
+
+            console.log('auth gaurd');
+            console.log(JSON.parse(localStorage.getItem('credentials')));
 
             this.ps.addPermission(role);
 
@@ -69,6 +74,7 @@ export class AuthorizedGuard implements CanActivate, CanActivateChild {
   }
 
   validateRole(data: Data): boolean {
+    console.log('validating role');
     const allowedRoles = data && data.roles;
     const allowedPermissions = data && data.permissions;
     const userRolesAndPermissions = Object.keys(this.ps.getPermissions());

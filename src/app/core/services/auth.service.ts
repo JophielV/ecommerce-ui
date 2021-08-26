@@ -27,7 +27,7 @@ export class AuthService {
     params = params.append('username', encodeURIComponent(form.username));
     params = params.append('password', encodeURIComponent(form.password));
 
-    return this.httpClient.post<any>(`${environment.apiUrl}/login`, decodeURIComponent(params.toString()), {headers});
+    return this.httpClient.post<any>(`${environment.baseUrl}/login`, decodeURIComponent(params.toString()), {headers});
   }
 
   public getLoggedInUser(): Observable<any> {
@@ -47,7 +47,7 @@ export class AuthService {
   }
 
   public logout(): Observable<any> {
-    return this.httpClient.post<any>(`${environment.apiUrl}/logout`, null)
+    return this.httpClient.post<any>(`${environment.baseUrl}/logout`, null)
       .pipe(tap((response: any) => {
         this.permissionsService.flushPermissions();
         localStorage.clear();

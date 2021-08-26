@@ -52,15 +52,19 @@ export class LoginComponent implements OnInit, OnDestroy {
           username: user.principal.username,
           role
         });
+
         this.ps.addPermission(role);
 
         if (user.principal.role && user.principal.role.privileges) {
           const privileges: Array<any> = user.principal.role.privileges.length > 0 ? user.principal.role.privileges : null;
-          for (const privilige of privileges) {
-            this.ps.addPermission(privilige.code);
+          if (privileges != null) {
+            for (const privilige of privileges) {
+              this.ps.addPermission(privilige.code);
+            }
           }
         }
 
+        console.log('role: ' + role);
         if (role) {
           this.r.navigateByUrl('/');
         } else {

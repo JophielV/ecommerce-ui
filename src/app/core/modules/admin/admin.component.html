@@ -1,0 +1,74 @@
+<!--<app-top-bar></app-top-bar>-->
+
+<div class="left side-menu">
+  <div class="sidebar-inner slimscrollleft">
+    <!--- Divider -->
+    <div id="sidebar-menu">
+      <ul>
+
+        <!-- <li class="menu-title">Menu Title</li> -->
+        <li *ngIf="securityService.isAuthorized('VIEW_ROLE_LIST')">
+          <a routerLink="./roles" class="waves-effect waves-primary"
+             routerLinkActive="active">
+            <i class="mdi mdi-shield"></i><span> Role Management </span></a>
+        </li>
+        <li>
+          <a routerLink="./users" class="waves-effect waves-primary"
+             routerLinkActive="active">
+            <i class="mdi mdi-account"></i><span> User Management </span></a>
+        </li>
+        <li>
+          <a routerLink="./" [routerLinkActiveOptions]="{ exact: true }" class="waves-effect waves-primary"
+             routerLinkActive="active">
+            <i class="mdi mdi-clipboard-account"></i><span> Principal Management </span></a>
+        </li>
+        <li *ngIf="securityService.isAuthorized('VIEW_TEMPLATE_LIST')">
+          <a routerLink="./sms" class="waves-effect waves-primary"
+             routerLinkActive="active">
+            <i class="mdi mdi-message-processing"></i><span> SMS Management </span></a>
+        </li>
+        <li *ngIf="securityService.isAuthorized('VIEW_PORTAL_CONFIG_LIST')">
+          <a routerLink="./config" class="waves-effect waves-primary"
+             routerLinkActive="active">
+            <i class="mdi mdi-settings"></i><span> Configurations </span></a>
+        </li>
+
+        <!-- <li class="has_sub">
+          <a class="waves-effect waves-primary"
+             [ngClass]="{ subdrop: toggleSubMenu === undefined ? submenu.isActive : toggleSubMenu }"
+             (click)="toggleSubMenu = toggleSubMenu === undefined ? !submenu.isActive : !toggleSubMenu">
+            <i class="mdi mdi-settings"></i><span> Parent Menu </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul routerLinkActive="d-block" class="list-unstyled"
+              [ngClass]="{ 'd-block': toggleSubMenu }" #submenu="routerLinkActive">
+            <li routerLinkActive="active">
+              <a routerLink="/sub" class="waves-effect waves-primary"><span> Sub Menu </span></a>
+            </li>
+          </ul>
+        </li> -->
+
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+
+</div>
+
+<div class="content-page">
+  <!-- Start content -->
+  <div class="content">
+    <div class="container-fluid text-gray-dark">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- end container -->
+  </div>
+  <!-- end content -->
+
+  <!--
+  <footer class="footer">
+  </footer>
+  -->
+</div>

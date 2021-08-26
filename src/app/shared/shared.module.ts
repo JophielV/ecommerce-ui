@@ -6,12 +6,14 @@ import { RouterModule } from '@angular/router';
 import {ChangePasswordComponent} from '../core/modules/auth/change-password/change-password.component';
 import {NgxUpperCaseDirectiveModule} from 'ngx-upper-case-directive';
 import {ShowHidePasswordModule} from 'ngx-show-hide-password';
+import {TopBarComponent} from './components/layout/top-bar/top-bar.component';
 
 
 
 @NgModule({
   declarations: [
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    TopBarComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import {ShowHidePasswordModule} from 'ngx-show-hide-password';
     FormsModule,
     ReactiveFormsModule,
     NgxUpperCaseDirectiveModule,
-    ShowHidePasswordModule
+    ShowHidePasswordModule,
+    TopBarComponent
   ]
 })
 export class SharedModule {

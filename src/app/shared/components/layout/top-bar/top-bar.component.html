@@ -1,0 +1,40 @@
+<div class="topbar">
+
+  <!-- LOGO -->
+  <div class="topbar-left">
+    <div class="text-center">
+      <a class="logo" [routerLink]="landingUrl">
+        Health Metrics Inc.
+      </a>
+    </div>
+  </div>
+
+  <nav class="navbar-custom">
+
+    <ul class="list-inline float-right mb-0" ngbDropdown placement="bottom-right">
+      <li class="list-inline-item notification-list">
+        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" ngbDropdownToggle
+           role="button" aria-haspopup="false" aria-expanded="false">
+          <i class="mdi mdi-account-circle text-white align-middle" style="font-size: 1rem"></i>&nbsp;
+          <span class="text-white pr-3">{{ username }}</span>
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu profile-dropdown">
+          <!-- item-->
+          <a routerLink="change-password" class="dropdown-item notify-item c-pointer">
+            <i class="mdi mdi-lock"></i> <span>Change Password</span>
+          </a>
+          <a (click)="logout()" class="dropdown-item notify-item c-pointer">
+            <i class="mdi mdi-logout-variant"></i> <span>Logout</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="list-inline menu-left mb-0">
+      <li class="float-left logo logo-text d-flex align-items-center pl-4">
+      </li>
+    </ul>
+
+  </nav>
+
+</div>

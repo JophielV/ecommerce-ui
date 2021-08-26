@@ -14,7 +14,8 @@ export class NotAuthorizedGuard implements CanActivate {
   }
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
-    console.log('trigger');
+    console.log('trigger not auth gaurd');
+    console.log(!this.as.isAuthenticated());
     if (!this.as.isAuthenticated()) {
       return this.as.logout()
         .pipe(map(() => {

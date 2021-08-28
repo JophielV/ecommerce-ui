@@ -15,6 +15,11 @@ const routes: Routes = [
     canActivateChild: [ AuthorizedGuard ],
     loadChildren: () => import('./core/modules/admin/admin.module').then(m => m.AdminModule)
   },
+  {
+    path: 'vendor',
+    canActivateChild: [ AuthorizedGuard ],
+    loadChildren: () => import('./core/modules/vendor/vendor.module').then(m => m.VendorModule)
+  }
 ];
 
 @NgModule({

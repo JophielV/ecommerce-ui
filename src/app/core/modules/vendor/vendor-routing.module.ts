@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './admin.component';
+import {VendorComponent} from './vendor.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: AdminComponent,
+    component: VendorComponent,
     data: {
-      roles: ['SYSTEM_ADMIN'],
-      permissions: ['CREATE_USER']
+      roles: ['VENDOR'],
+      permissions: ['CREATE_PRODUCT']
     },
     children: []
   }
-  ];
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class VendorRoutingModule { }

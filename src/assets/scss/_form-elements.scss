@@ -1,0 +1,42 @@
+/* ===========
+   Form Elements
+ =============*/
+
+label {
+  font-weight: 600;
+}
+
+.input-sm {
+  height: 30px;
+}
+
+.input-group-btn {
+  .btn {
+    padding: 7px 14px;
+  }
+}
+
+.has-success {
+  .form-control {
+    border-color: $success;
+    box-shadow: none !important;
+  }
+}
+
+.has-warning {
+  .form-control {
+    border-color: $warning;
+    box-shadow: none !important;
+  }
+}
+
+.has-error {
+  .form-control {
+    border-color: $danger;
+    box-shadow: none !important;
+  }
+}
+
+.input-group-addon {
+  border-radius: 2px;
+}

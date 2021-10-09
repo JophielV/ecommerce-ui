@@ -1,0 +1,382 @@
+.text-gray-dark {
+  color: $gray-900;
+}
+
+// prevent contents from spilling out
+.card-box {
+  word-wrap: break-word;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+// fix: Minton's x button is off-center
+.modal-header .close {
+  padding: 0;
+  margin: 0;
+}
+
+.form-row {
+  align-items: baseline;
+}
+
+.required:after {
+  content: ' *';
+  color: #ff0000;
+  font-size: 14px;
+}
+
+.btn:disabled {
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.wide {
+  letter-spacing: 0.5px;
+}
+
+.ngx-datatable.bootstrap {
+  .datatable-header {
+    .datatable-header-cell {
+      .datatable-header-cell-label {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .datatable-body {
+    .datatable-body-row.active {
+      background-color: #ffffff;
+      color: #414141;
+    }
+  }
+
+  .datatable-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    font-size: 12px;
+    font-weight: 400;
+    color: $dark;
+    background-color: transparent;
+    .datatable-pager {
+      li {
+        margin: 10px 3px !important;
+        vertical-align: middle;
+        &.disabled a {
+          color: rgba(0, 0, 0, 0.26) !important;
+          background-color: transparent !important;
+        }
+        &.active a {
+          background-color: $primary !important;
+          color: $white;
+        }
+      }
+      a {
+        color: $dark;
+        margin: 0;
+        &:hover {
+          color: $white;
+          background-color: $secondary;
+        }
+      }
+    }
+  }
+
+  .datatable-body {
+    .datatable-body-row.datatable-row-even {
+      background-color: $white;
+    }
+
+    .progress-linear {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 5px;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+
+      .container {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: none !important;
+        height: 5px;
+        -webkit-transform: translate(0, 0) scale(1, 1);
+        transform: translate(0, 0) scale(1, 1);
+        background-color: #aad1f9;
+
+        .bar {
+          transition: all 0.2s linear;
+          -webkit-animation: query 0.8s infinite
+            cubic-bezier(0.39, 0.575, 0.565, 1);
+          animation: query 0.8s infinite cubic-bezier(0.39, 0.575, 0.565, 1);
+          transition: -webkit-transform 0.2s linear;
+          transition: transform 0.2s linear;
+          background-color: #00b19d;
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 100%;
+          height: 5px;
+        }
+      }
+    }
+    .datatable-body-cell {
+      .datatable-body-cell-label {
+        .view-link {
+          color: #007bff;
+        }
+      }
+    }
+  }
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  white-space: normal !important;
+}
+
+.table-danger {
+  background-color: #f5c6cb87 !important;
+}
+
+.alertify-notifier.ajs-right {
+  top: 65px !important;
+
+  .ajs-message {
+    word-break: break-word;
+    font-size: 14px;
+    text-align: left;
+    text-shadow: none;
+    right: 280px !important;
+
+    &.ajs-success {
+      background-color: #00b19d;
+    }
+  }
+}
+
+svg-icon {
+  user-select: none;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  svg {
+    height: 1.5rem;
+    width: auto;
+  }
+
+  &:not(.color-default) {
+    svg {
+      path {
+        fill: $primary;
+      }
+    }
+
+    &.buton:hover {
+      path {
+        fill: darken($primary, 15%);
+      }
+    }
+  }
+}
+
+button {
+  &:hover {
+    svg {
+      path {
+        fill: darken($primary, 15%);
+      }
+    }
+  }
+}
+
+::placeholder {
+  color: #999 !important;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+.card {
+  border-radius: 0.4rem;
+  box-shadow: 0 1px 2px rgba(221, 221, 221, 0.5),
+    0 1px 2px rgba(221, 221, 221, 0.6);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+ngx-spinner {
+  .overlay {
+    z-index: 999 !important;
+  }
+}
+
+toaster-container {
+  .toast-top-right {
+    right: 20px;
+    top: 8px;
+  }
+
+  .toast {
+    box-shadow: none !important;
+    padding: 15px 25px !important;
+
+    .toaster-icon {
+      display: none;
+    }
+
+    .toast-content {
+      .toast-title {
+        font-size: 14px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .toast-message {
+        font-size: 13px;
+        word-wrap: break-word;
+      }
+    }
+
+    .toast-close-button {
+      position: absolute;
+      right: 7px;
+      top: 4px;
+    }
+  }
+}
+
+/* Custom/Additionals */
+
+.wrapper-page {
+  margin: 7.5% auto;
+  max-width: 360px;
+
+  .form-control {
+    height: 40px;
+  }
+
+  .btn-email {
+    padding: 9px 20px;
+  }
+}
+
+.ng-select-container {
+  min-height: 32px !important;
+  height: 32px !important;
+}
+
+.ng-select {
+  &.showPages {
+    width: 65px;
+  }
+}
+
+//AW WIZARD WRAP
+.wizard-steps {
+  flex-wrap: wrap;
+
+  &.horizontal {
+    h6,
+    .h6 {
+      font-size: 11px !important;
+      line-height: 3rem;
+
+      @media screen and (min-width: 768px) {
+        font-size: 16px !important;
+      }
+    }
+  }
+}
+
+.stepper {
+  &.mute {
+    .h6 {
+      color: #e0e0e0;
+      font-weight: 300;
+    }
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &.highlight {
+    .h6 {
+      font-weight: 600;
+    }
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 436px) {
+  nz-upload {
+    display: flex;
+    flex-direction: row;
+  
+    .ant-upload-list-item-info {
+      .anticon-paper-clip {
+        top: 0;
+      }
+    } 
+    
+    .ant-upload-list-item {
+      .anticon-close {
+        top: 4px;
+      }
+    }
+  
+    .ant-upload-list-item-name {
+      padding-right: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 6000px) and (min-width: 700px) {
+  nz-upload {
+    display: flex;
+    flex-direction: row;
+  
+    .ant-upload-list-item-info {
+      .anticon-paper-clip {
+        top: 0;
+      }
+    } 
+
+    .ant-upload-list {
+      margin-left: .8rem;
+    }
+    
+    .ant-upload-list-item {
+      .anticon-close {
+        top: 4px;
+      }
+    }
+  
+    .ant-upload-list-item-name {
+      padding-right: 20px;
+    }
+  }
+}
+
+.modal-footer {
+  border-top: none;
+  background-color: #F5F5F5;
+}
+
+/* End of Custom/Additionals */
